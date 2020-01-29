@@ -1,0 +1,292 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --user-colour: #fff;
+}
+
+body {
+  background-color: #267b7d;
+  font-family: Montserrat, Arial, sans-serif;
+  color: #fff;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header {
+  font-weight: lighter;
+}
+
+.board {
+  width: 80%;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.choice-bar {
+  width: 110px;
+  list-style: none;
+  background-color: var(--user-colour);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.choice img {
+  width: 100px;
+  height: 100px;
+  transition: 250ms;
+}
+
+#user-choices img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Result section stylings */
+
+.result-section {
+  width: 50%;
+  height: 500px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.result-section > * {
+  flex-basis: 30%;
+}
+
+.results {
+  flex-basis: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.results > * {
+  flex-basis: 50%;
+}
+
+.result-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.player-icon {
+  width: 50px;
+  height: 50px;
+}
+.user-image {
+  width: 45px;
+  height: 45px;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-choice {
+  background-color: var(--user-colour);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.final-choice img {
+  width: 100px;
+  height: 100px;
+}
+
+#commentary {
+  flex-basis: 10%;
+  font-size: 1.8rem;
+  white-space: nowrap;
+  align-self: center;
+  text-transform: capitalize;
+}
+
+#computer-choices,
+#computer-choice {
+  background-color: #333;
+  transform: scaleX(-1);
+}
+
+.extra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+button {
+  align-self: center;
+  padding: 10px 35px;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(0, 55, 107);
+  color: #fff;
+  transition: 250ms;
+  cursor: pointer;
+  outline: none;
+}
+button:hover {
+  background-color: rgb(0, 29, 56);
+}
+button:active {
+  background-color: rgb(4, 111, 211);
+}
+
+footer {
+  font-size: 12px !important;
+  font-weight: lighter;
+}
+
+/* ===Mobile stylings=== */
+
+/* Tablet */
+@media only screen and (max-width: 768px) {
+  main {
+    justify-content: space-around;
+  }
+
+  .board {
+    flex-direction: column;
+  }
+
+  .user-scoreboard .score {
+    margin-bottom: 10px;
+  }
+
+  .computer-scoreboard .score {
+    order: 1;
+  }
+
+  .choice-bar {
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 100px;
+  }
+
+  .choice-bar > li > img:hover {
+    transform: scale(0.7);
+  }
+
+  .result-section {
+    width: 90%;
+  }
+  .results {
+    flex-direction: column;
+  }
+
+  .result-board {
+    flex-direction: row;
+  }
+
+  #user-choices {
+    order: 1;
+  }
+  #computer-choices {
+    order: -1;
+  }
+
+  .user-section {
+    order: 1;
+  }
+  .computer-section {
+    order: -1;
+  }
+
+  button {
+    transform: scale(0.7);
+  }
+
+  #commentary {
+    order: 1;
+  }
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 425px) {
+  main {
+    justify-content: space-around;
+  }
+
+  .board {
+    transform: scale(0.9);
+  }
+
+  .choice-bar {
+    height: 90px;
+    width: 115%;
+    align-self: center;
+  }
+
+  .choice-bar img {
+    transform: scale(0.7);
+  }
+
+  .result-board {
+    justify-content: space-between;
+  }
+
+  .final-choice {
+    width: 120px;
+    height: 120px;
+  }
+
+  .final-choice img {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* * {
+    border: none !important;
+  } */
+}
+
+@media only screen and (max-width: 375px) {
+  * {
+    border: none !important;
+  }
+
+  .header {
+    margin-top: 10px;
+    margin-bottom: -20px;
+  }
+
+  .board {
+    transform: scale(0.8);
+  }
+
+  .choice-bar {
+    width: 120%;
+  }
+
+  footer {
+    margin-top: -20px;
+  }
+}
