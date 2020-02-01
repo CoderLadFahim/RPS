@@ -136,7 +136,7 @@ main {
 .extra {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 button {
