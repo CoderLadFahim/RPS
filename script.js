@@ -196,6 +196,12 @@ function resetChoiceSize() {
 [rock, paper, scissors].forEach(choice => {
   choice.addEventListener("mousedown", e => {
     e.target.style.transform = "scale(1.4)";
+
+    // semi resetting on mouse down
+    resetChoices();
+    resetChoiceSize();
+    resetDecorations();
+    resetText();
   });
 
   choice.addEventListener("mouseup", e => {
