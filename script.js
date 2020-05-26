@@ -31,9 +31,9 @@ const comm = document.querySelector("#commentary");
 const resetBtn = document.querySelector("button");
 
 // setting the choice imgs
-rockChoices.forEach(rock => (rock.src = rockImg));
-paperChoices.forEach(paper => (paper.src = paperImg));
-scissorChoices.forEach(scissors => (scissors.src = scissorsImg));
+rockChoices.forEach((rock) => (rock.src = rockImg));
+paperChoices.forEach((paper) => (paper.src = paperImg));
+scissorChoices.forEach((scissors) => (scissors.src = scissorsImg));
 
 // GAME FUNCTONALITY STARS UNDER THIS LINE
 
@@ -69,7 +69,7 @@ function compMove() {
 }
 
 function enlargeChoice() {
-  document.querySelectorAll("#computer-choices img").forEach(choice => {
+  document.querySelectorAll("#computer-choices img").forEach((choice) => {
     if (compChoice.src == choice.src) {
       choice.style.transform = "scale(1.4)";
     } else {
@@ -186,30 +186,30 @@ const resetText = () => (comm.textContent = "make your move");
 
 function resetChoiceSize() {
   Array.from(document.querySelectorAll("#computer-choices img")).forEach(
-    img => (img.style.transform = "")
+    (img) => (img.style.transform = "")
   );
 }
 
 // EVENT LISTENERS
 
 // popup effect
-[rock, paper, scissors].forEach(choice => {
-  choice.addEventListener("mousedown", e => {
+[rock, paper, scissors].forEach((choice) => {
+  choice.addEventListener("mousedown", (e) => {
     e.target.style.transform = "scale(1.4)";
 
-    // semi resetting on mouse down
+    // semi r esetting on mouse down
     resetChoices();
     resetChoiceSize();
     resetDecorations();
     resetText();
   });
 
-  choice.addEventListener("mouseup", e => {
+  choice.addEventListener("mouseup", (e) => {
     e.target.style.transform = "";
   });
 });
 
-choiceTab.addEventListener("click", e => {
+choiceTab.addEventListener("click", (e) => {
   let targetElement = e.target;
 
   if (targetElement.parentElement.className == "choice") {
@@ -222,7 +222,7 @@ choiceTab.addEventListener("click", e => {
   }
 });
 
-resetBtn.addEventListener("click", e => {
+resetBtn.addEventListener("click", (e) => {
   scoreReset();
   resetChoices();
   resetChoiceSize();
